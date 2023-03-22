@@ -802,7 +802,7 @@ RectTransform:
   m_Children:
   - {fileID: 174400861}
   m_Father: {fileID: 505329788}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1273,7 +1273,7 @@ GameObject:
   - component: {fileID: 505329790}
   - component: {fileID: 505329789}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1291,8 +1291,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 332993515}
   - {fileID: 2293612081879661371}
+  - {fileID: 332993515}
   m_Father: {fileID: 1591365591}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1583,13 +1583,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 597644377}
   m_TextComponent: {fileID: 1200218739}
   m_Placeholder: {fileID: 841566060}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -2168,7 +2168,7 @@ GameObject:
   - component: {fileID: 878110591}
   - component: {fileID: 878110590}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: AddMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3673,13 +3673,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1443472572}
   m_TextComponent: {fileID: 1791830004}
   m_Placeholder: {fileID: 1317452364}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -3857,6 +3857,7 @@ MonoBehaviour:
   ui: {fileID: 1591365593}
   resources:
   - {fileID: 2293612081879661374}
+  buttonReset: {fileID: 0}
   dropdownAdd: {fileID: 1861470918}
   inputFieldAdd: {fileID: 1443472571}
   buttonAdd: {fileID: 901605539}
@@ -4130,7 +4131,7 @@ GameObject:
   - component: {fileID: 1820304541}
   - component: {fileID: 1820304540}
   m_Layer: 5
-  m_Name: Panel (2)
+  m_Name: RemoveMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4797,7 +4798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768732691929839134, guid: ea9540d442020574ab2eaed88ef7909c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6768732691929839134, guid: ea9540d442020574ab2eaed88ef7909c, type: 3}
       propertyPath: m_AnchorMax.x
