@@ -13,7 +13,7 @@ namespace ResourceSystem
 
         private void Awake()
         {
-            
+            UpdateText();
         }
 
         public void Cleare()
@@ -26,6 +26,11 @@ namespace ResourceSystem
         public void UpdateCountResource(int add)
         {
             _countResource += add;
+
+            if (_countResource < 0)
+            {
+                _countResource = 0;
+            }
 
             UpdateText();
         }

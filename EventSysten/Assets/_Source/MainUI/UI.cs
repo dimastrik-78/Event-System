@@ -10,7 +10,7 @@ namespace MainUI
         [SerializeField] private GameObject mainPanel;
         [SerializeField] private Button mainButton;
         [SerializeField] private GameObject addPanel;
-        [SerializeField] private Button addButton;
+        [SerializeField] private Button addButton;  
         [SerializeField] private GameObject removePanel;
         [SerializeField] private Button removeButton;
 

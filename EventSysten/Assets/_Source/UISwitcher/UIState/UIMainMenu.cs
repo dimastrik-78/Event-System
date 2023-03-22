@@ -1,26 +1,40 @@
-﻿using System;
+﻿using ResourceSystem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine.UI;
 
 namespace UISwitcher.UIState
 {
     class UIMainMenu : IUIState
     {
-        public UIMainMenu()
-        {
+        private Resource[] _resources;
+        private Button _button;
 
+        public UIMainMenu(Resource[] resources, Button button)
+        {
+            _resources = resources;
+            _button = button;
+        }
+
+        private void ResetResource()
+        {
+            for (int i = 0; i < _resources.Length; i++)
+            {
+                _resources[i].Cleare();
+            }
         }
 
         public void Enter()
         {
-            throw new NotImplementedException();
+            _button.onClick.AddListener(ResetResource);
         }
 
         public void Exit()
         {
-            throw new NotImplementedException();
+            _button.onClick.RemoveAllListeners();
         }
     }
 }

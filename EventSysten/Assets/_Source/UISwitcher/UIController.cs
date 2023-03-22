@@ -1,4 +1,5 @@
-﻿using ResourceSystem;
+﻿using System.Collections.Generic;
+using ResourceSystem;
 using UISwitcher.UIState;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,14 @@ namespace UISwitcher
 {
     public class UIController : MonoBehaviour
     {
+        [Header("Main System")]
+        [SerializeField] private GameObject mainPanel;
+        [SerializeField] private Button mainButton;
+        [SerializeField] private GameObject addPanel;
+        [SerializeField] private Button addButton;
+        [SerializeField] private GameObject removePanel;
+        [SerializeField] private Button removeButton;
+
         [Header("Control System")] 
         [SerializeField] private UIView ui;
         [SerializeField] private Resource[] resources;
@@ -22,69 +31,63 @@ namespace UISwitcher
         [SerializeField] private InputField inputFieldRemove;
         [SerializeField] private Button buttonRemove;
 
-        private UIMainMenu _uiMainMenu;
-        private UIAddMenu _uiAddMenu;
-        private UIRemoveMenu _uiRemoveMenu;
+        private IUIState _uiMainMenu;
+        private IUIState _uiAddMenu;
+        private IUIState _uiRemoveMenu;
 
         private void Awake()
         {
-            buttonAdd.onClick.AddListener(AddResource);
-            buttonRemove.onClick.AddListener(RemoveResource);
-            buttonReset.onClick.AddListener(ResetResource);
+            mainButton.onClick.AddListener(MainPanel);
+            addButton.onClick.AddListener(AddPanel);
+            removeButton.onClick.AddListener(RemovePanel);
 
-            _uiMainMenu = new UIMainMenu();
-            _uiAddMenu = new UIAddMenu();
-            _uiRemoveMenu = new UIRemoveMenu();
+            _uiMainMenu = new UIMainMenu(resources, buttonReset);
+            _uiAddMenu = new UIAddMenu(resources, dropdownAdd, inputFieldAdd, buttonAdd);
+            _uiRemoveMenu = new UIRemoveMenu(resources, dropdownRemove, inputFieldRemove, buttonRemove);
         }
 
-        private void ResetResource()
+        private void MainPanel()
         {
-            for (int i = 0; i < resources.Length; i++)
-            {
-                resources[i].Cleare();
-            }
+            DisablePanel();
+
+            ExitStateUI();
+            _uiMainMenu.Enter();
+
+            mainPanel.SetActive(true);
         }
 
-        private void AddResource()
+        private void AddPanel()
         {
-            Resource resource = null;
-            
-            resource = FindResource(FindTypeResource(dropdownAdd));
-            
-            resource.UpdateCountResource(int.Parse(inputFieldAdd.text));
-            ui.UpdateCountResource(resource);
-        }
-        
-        private void RemoveResource()
-        {
-            
+            DisablePanel();
+
+            ExitStateUI();
+            _uiAddMenu.Enter();
+
+            addPanel.SetActive(true);
         }
 
-        private ResourceEnum FindTypeResource(Dropdown dropdown)
+        private void RemovePanel()
         {
-            if (dropdown.value == 0)
-            {
-                return ResourceEnum.Diamond;
-            }
-            else if (dropdownAdd.value == 1)
-            {
-                return ResourceEnum.Gold;
-            }
+            DisablePanel();
 
-            return ResourceEnum.Iron;
+            ExitStateUI();
+            _uiRemoveMenu.Enter();
+
+            removePanel.SetActive(true);
         }
 
-        private Resource FindResource(ResourceEnum resourceIndex)
+        private void DisablePanel()
         {
-            foreach (var result in resources)
-            {
-                if (result.GetTypeResource() == resourceIndex)
-                {
-                    return result;
-                }
-            }
+            mainPanel.SetActive(false);
+            addPanel.SetActive(false);
+            removePanel.SetActive(false);
+        }
 
-            return null;
+        private void ExitStateUI()
+        {
+            _uiMainMenu.Exit();
+            _uiAddMenu.Exit();
+            _uiRemoveMenu.Exit();
         }
     }
 }
