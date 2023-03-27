@@ -1,23 +1,18 @@
 ﻿using ResourceSystem;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine.UI;
-using UnityEngine;
 using Until;
 
 namespace UISwitcher.UIState
 {
     class UIAddMenu : IUIState
     {
-        private Resource[] _resources;
-        private Dropdown _dropdown;
-        private InputField _inputField;
-        private Button _button;
+        private readonly List<ResourceController> _resources;
+        private readonly Dropdown _dropdown;
+        private readonly InputField _inputField;
+        private readonly Button _button;
 
-        public UIAddMenu(Resource[] resources, Dropdown dropdown, InputField inputField, Button button)
+        public UIAddMenu(List<ResourceController> resources, Dropdown dropdown, InputField inputField, Button button)
         {
             _resources = resources;
             _dropdown = dropdown;
@@ -27,9 +22,9 @@ namespace UISwitcher.UIState
 
         private void AddResource()
         {
-            Resource resource = MyExtensions.FindResource(_resources, MyExtensions.FindTypeResource(_dropdown));
+            ResourceController resourceView = MyExtensions.FindResource(_resources, MyExtensions.FindTypeResource(_dropdown));
 
-            resource.UpdateCountResource(int.Parse(_inputField.text));
+            resourceView.UpdateCountResource(int.Parse(_inputField.text));
         }
 
         public void Enter()

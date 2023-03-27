@@ -4130,18 +4130,6 @@ MonoBehaviour:
   addButton: {fileID: 1863768041}
   removePanel: {fileID: 1820304538}
   removeButton: {fileID: 363918437}
-  ui: {fileID: 1591365593}
-  resources:
-  - {fileID: 1263417449}
-  - {fileID: 2293612081879661374}
-  - {fileID: 723558475}
-  buttonReset: {fileID: 332993516}
-  dropdownAdd: {fileID: 1861470918}
-  inputFieldAdd: {fileID: 1443472571}
-  buttonAdd: {fileID: 901605539}
-  dropdownRemove: {fileID: 883315295}
-  inputFieldRemove: {fileID: 597644376}
-  buttonRemove: {fileID: 743868469}
 --- !u!114 &1591365593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4781,16 +4769,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f3315a1ea4ceb419774d6280c317ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiController: {fileID: 0}
-  ui: {fileID: 0}
-  resources: []
-  buttonReset: {fileID: 0}
-  dropdownAdd: {fileID: 0}
-  inputFieldAdd: {fileID: 0}
-  buttonAdd: {fileID: 0}
-  dropdownRemove: {fileID: 0}
-  inputFieldRemove: {fileID: 0}
-  buttonRemove: {fileID: 0}
+  uiController: {fileID: 1591365592}
+  resources:
+  - {fileID: 1263417449}
+  - {fileID: 2293612081879661374}
+  - {fileID: 723558475}
+  buttonReset: {fileID: 332993516}
+  dropdownAdd: {fileID: 1861470918}
+  inputFieldAdd: {fileID: 1443472571}
+  buttonAdd: {fileID: 901605539}
+  dropdownRemove: {fileID: 883315295}
+  inputFieldRemove: {fileID: 597644376}
+  buttonRemove: {fileID: 743868469}
 --- !u!1 &2040976745
 GameObject:
   m_ObjectHideFlags: 0

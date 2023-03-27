@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using ResourceSystem;
 using UISwitcher;
+using UISwitcher.UIState;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +12,7 @@ namespace Core
         [SerializeField] private UIController uiController;
 
         [Header("Control System")]
-        [SerializeField] private UIView ui;
-        [SerializeField] private Resource[] resources;
+        [SerializeField] private ResourceView[] resources;
         [SerializeField] private Button buttonReset;
 
         [Header("Add System")]
@@ -24,9 +25,37 @@ namespace Core
         [SerializeField] private InputField inputFieldRemove;
         [SerializeField] private Button buttonRemove;
 
-        void Awake()
+        private UIStateMachine _stateMachine;
+        private List<ResourceController> _resourceController;
+
+        void Start()
         {
+            ActivateResourceView();
+            GetResourceControllers();
             
+            _stateMachine = new UIStateMachine(_resourceController,
+                buttonReset,
+                dropdownAdd, inputFieldAdd, buttonAdd,
+                dropdownRemove, inputFieldRemove, buttonRemove);
+
+            uiController.SetStateMachine(_stateMachine);
+        }
+
+        private void ActivateResourceView()
+        {
+            foreach (var resource in resources)
+            {
+                resource.StartWork();
+            }
+        }
+        
+        private void GetResourceControllers()
+        {
+            _resourceController = new List<ResourceController>();
+            foreach (var resource in resources)
+            {
+                _resourceController.Add(resource.GetController());
+            }
         }
     }
 }

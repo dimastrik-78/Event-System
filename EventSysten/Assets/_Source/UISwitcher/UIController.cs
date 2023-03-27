@@ -11,47 +11,29 @@ namespace UISwitcher
         [Header("Main System")]
         [SerializeField] private GameObject mainPanel;
         [SerializeField] private Button mainButton;
+        
+        [Header("Add System")]
         [SerializeField] private GameObject addPanel;
         [SerializeField] private Button addButton;
-        [SerializeField] private GameObject removePanel;
-        [SerializeField] private Button removeButton;
-
-        [Header("Control System")] 
-        [SerializeField] private UIView ui;
-        [SerializeField] private Resource[] resources;
-        [SerializeField] private Button buttonReset;
-
-        [Header("Add System")]
-        [SerializeField] private Dropdown dropdownAdd;
-        [SerializeField] private InputField inputFieldAdd;
-        [SerializeField] private Button buttonAdd;
         
         [Header("Remove System")]
-        [SerializeField] private Dropdown dropdownRemove;
-        [SerializeField] private InputField inputFieldRemove;
-        [SerializeField] private Button buttonRemove;
-
-        private IUIState _uiMainMenu;
-        private IUIState _uiAddMenu;
-        private IUIState _uiRemoveMenu;
+        [SerializeField] private GameObject removePanel;
+        [SerializeField] private Button removeButton;
+        
+        private UIStateMachine _stateMachine;
 
         private void Awake()
         {
             mainButton.onClick.AddListener(MainPanel);
             addButton.onClick.AddListener(AddPanel);
             removeButton.onClick.AddListener(RemovePanel);
-
-            _uiMainMenu = new UIMainMenu(resources, buttonReset);
-            _uiAddMenu = new UIAddMenu(resources, dropdownAdd, inputFieldAdd, buttonAdd);
-            _uiRemoveMenu = new UIRemoveMenu(resources, dropdownRemove, inputFieldRemove, buttonRemove);
         }
 
         private void MainPanel()
         {
             DisablePanel();
 
-            ExitStateUI();
-            _uiMainMenu.Enter();
+            _stateMachine.ChangeState(0);
 
             mainPanel.SetActive(true);
         }
@@ -60,8 +42,7 @@ namespace UISwitcher
         {
             DisablePanel();
 
-            ExitStateUI();
-            _uiAddMenu.Enter();
+            _stateMachine.ChangeState(1);
 
             addPanel.SetActive(true);
         }
@@ -70,8 +51,7 @@ namespace UISwitcher
         {
             DisablePanel();
 
-            ExitStateUI();
-            _uiRemoveMenu.Enter();
+            _stateMachine.ChangeState(2);
 
             removePanel.SetActive(true);
         }
@@ -82,12 +62,10 @@ namespace UISwitcher
             addPanel.SetActive(false);
             removePanel.SetActive(false);
         }
-
-        private void ExitStateUI()
+        
+        public void SetStateMachine(UIStateMachine stateMachine)
         {
-            _uiMainMenu.Exit();
-            _uiAddMenu.Exit();
-            _uiRemoveMenu.Exit();
+            _stateMachine = stateMachine;
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using ResourceSystem;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Until
@@ -16,7 +13,7 @@ namespace Until
             {
                 return ResourceEnum.Diamond;
             }
-            else if (dropdown.value == 1)
+            if (dropdown.value == 1)
             {
                 return ResourceEnum.Gold;
             }
@@ -24,7 +21,7 @@ namespace Until
             return ResourceEnum.Iron;
         }
 
-        public static Resource FindResource(Resource[] resources, ResourceEnum resourceIndex)
+        public static ResourceController FindResource(List<ResourceController> resources, ResourceEnum resourceIndex)
         {
             foreach (var result in resources)
             {

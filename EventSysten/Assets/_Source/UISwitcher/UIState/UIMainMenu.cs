@@ -1,19 +1,15 @@
 ﻿using ResourceSystem;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine.UI;
 
 namespace UISwitcher.UIState
 {
     class UIMainMenu : IUIState
     {
-        private Resource[] _resources;
-        private Button _button;
+        private readonly List<ResourceController> _resources;
+        private readonly Button _button;
 
-        public UIMainMenu(Resource[] resources, Button button)
+        public UIMainMenu(List<ResourceController> resources, Button button)
         {
             _resources = resources;
             _button = button;
@@ -21,9 +17,9 @@ namespace UISwitcher.UIState
 
         private void ResetResource()
         {
-            for (int i = 0; i < _resources.Length; i++)
+            foreach (var resource in _resources)
             {
-                _resources[i].Cleare();
+                resource.Clear();
             }
         }
 

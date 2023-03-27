@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MainUI
+namespace UISwitcher
 {
-    public class UI : MonoBehaviour // UISwitcher
+    public class MainUI : MonoBehaviour
     {
         [SerializeField] private GameObject mainPanel;
         [SerializeField] private Button mainButton;
@@ -14,11 +12,18 @@ namespace MainUI
         [SerializeField] private GameObject removePanel;
         [SerializeField] private Button removeButton;
 
-        private void Awake()
+        private void OnEnable()
         {
             mainButton.onClick.AddListener(MainPanel);
             addButton.onClick.AddListener(AddPanel);
             removeButton.onClick.AddListener(RemovePanel);
+        }
+        
+        private void OnDisable()
+        {
+            mainButton.onClick.RemoveAllListeners();
+            addButton.onClick.RemoveAllListeners();
+            removeButton.onClick.RemoveAllListeners();
         }
 
         private void MainPanel()

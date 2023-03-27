@@ -6,12 +6,12 @@ namespace UISwitcher
 {
     public class UIView : MonoBehaviour
     {
-        [SerializeField] private Resource[] resources;
+        [SerializeField] private ResourceView[] resources;
         [SerializeField] private Dropdown[] dropdowns;
 
-        public void UpdateCountResource(Resource resource)
-        {
-            
-        }
+        // private void Awake()
+        // {
+        //     dropdowns[0].options.Add((Dropdown.OptionData)ResourceEnum.Diamond);
+        // }
     }
 }
