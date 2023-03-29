@@ -1,6 +1,5 @@
 ﻿using ResourceSystem;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
 
 namespace Until

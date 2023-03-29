@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using ResourceSystem;
-using UISwitcher.UIState;
+﻿using UISwitcher.UIState;
 using UnityEngine;
 using UnityEngine.UI;
 
