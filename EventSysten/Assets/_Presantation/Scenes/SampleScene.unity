@@ -3304,7 +3304,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1200218737
 GameObject:
@@ -4018,7 +4018,6 @@ GameObject:
   - component: {fileID: 1591365590}
   - component: {fileID: 1591365589}
   - component: {fileID: 1591365588}
-  - component: {fileID: 1591365593}
   - component: {fileID: 1591365592}
   m_Layer: 5
   m_Name: Canvas
@@ -4105,7 +4104,7 @@ RectTransform:
   - {fileID: 878110589}
   - {fileID: 1820304539}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4130,22 +4129,6 @@ MonoBehaviour:
   addButton: {fileID: 1863768041}
   removePanel: {fileID: 1820304538}
   removeButton: {fileID: 363918437}
---- !u!114 &1591365593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1591365587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 382573d85d3b47c4b6e3a677f85070da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resources: []
-  dropdowns:
-  - {fileID: 1861470918}
-  - {fileID: 883315295}
 --- !u!1 &1628911527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4755,7 +4738,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1940290880
 MonoBehaviour:
