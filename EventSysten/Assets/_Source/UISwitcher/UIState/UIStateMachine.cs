@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using ResourceSystem;
 using UnityEngine.UI;
+using Until;
 
 namespace UISwitcher.UIState
 {
-    public class UIStateMachine
+    public class UIStateMachine : ASignal<int>
     {
         private IUIState _currentState;
         
@@ -21,6 +22,8 @@ namespace UISwitcher.UIState
                 { 1, new UIAddMenu(resourceController, dropdownAdd, inputFieldAdd, buttonAdd) },
                 { 2, new UIRemoveMenu(resourceController, dropdownRemove, inputFieldRemove, buttonRemove) }
             };
+            
+            Signals.Get<UIStateMachine>().AddListener(ChangeState);
         }
 
         public void ChangeState(int id)
