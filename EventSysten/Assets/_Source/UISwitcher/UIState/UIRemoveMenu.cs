@@ -1,6 +1,7 @@
-﻿using ResourceSystem;
+﻿using System;
+using ResourceSystem;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using Signals;
 using Until;
 
 namespace UISwitcher.UIState
@@ -8,33 +9,27 @@ namespace UISwitcher.UIState
     class UIRemoveMenu : IUIState
     {
         private readonly List<ResourceController> _resources;
-        private readonly Dropdown _dropdown;
-        private readonly InputField _inputField;
-        private readonly Button _button;
-
-        public UIRemoveMenu(List<ResourceController> resources, Dropdown dropdown, InputField inputField, Button button)
+        
+        public UIRemoveMenu(List<ResourceController> resources)
         {
             _resources = resources;
-            _dropdown = dropdown;
-            _inputField = inputField;
-            _button = button;
         }
 
-        private void RemoveResource()
+        private void RemoveResource(ResourceEnum type, int count)
         {
-            ResourceController resourceController = MyExtensions.FindResource(_resources, MyExtensions.FindTypeResource(_dropdown));
-
-            resourceController.UpdateCountResource(-int.Parse(_inputField.text));
+            ResourceController resourceController = MyExtensions.FindResource(_resources, type);
+            
+            resourceController.UpdateCountResource(-count);
         }
 
         public void Enter()
         {
-            _button.onClick.AddListener(RemoveResource);
+            Until.Signals.Get<RemoveResourceSignal>().AddListener(RemoveResource);
         }
 
         public void Exit()
         {
-            _button.onClick.RemoveAllListeners();
+            Until.Signals.Get<RemoveResourceSignal>().RemoveListener(RemoveResource);
         }
     }
 }

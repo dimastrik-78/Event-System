@@ -7,12 +7,10 @@ namespace UISwitcher.UIState
     class UIMainMenu : IUIState
     {
         private readonly List<ResourceController> _resources;
-        private readonly Button _button;
 
-        public UIMainMenu(List<ResourceController> resources, Button button)
+        public UIMainMenu(List<ResourceController> resources)
         {
             _resources = resources;
-            _button = button;
         }
 
         private void ResetResource()
@@ -25,12 +23,10 @@ namespace UISwitcher.UIState
 
         public void Enter()
         {
-            _button.onClick.AddListener(ResetResource);
         }
 
         public void Exit()
         {
-            _button.onClick.RemoveAllListeners();
         }
     }
 }

@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4edce1e3-f9a3-4cd1-8c0c-c38ea625d27b" name="Changes" comment="" />
+    <list default="true" id="4edce1e3-f9a3-4cd1-8c0c-c38ea625d27b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Signals/AddResourceSignal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Signals/AddResourceSignal.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Signals/ClearResourceSignal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Signals/ClearResourceSignal.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Signals/RemoveResourceSignal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/Signals/RemoveResourceSignal.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/MainPanelView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/MainPanelView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/RemovePanelView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/RemovePanelView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EventSysten/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventSysten/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Presantation/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presantation/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/Signals.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Signals.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIAddMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIAddMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIMainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIMainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIRemoveMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIRemoveMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock://C:/zWork/Git/Event-System/EventSysten/Assets/_Source/Core/Bootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/zWork/Git/Event-System/EventSysten/Assets/_Source/Core/Bootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/zWork/Git/Event-System/EventSysten/Assets/_Source/Core/Bootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/zWork/Git/Event-System/EventSysten/Assets/_Source/Core/Bootstrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/zWork/Git/Event-System/EventSysten/Assets/_Source/UISwitcher/UIState/UIStateMachine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/zWork/Git/Event-System/EventSysten/Assets/_Source/UISwitcher/UIState/UIStateMachine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Source/Until/Signal.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -87,6 +113,8 @@
       <workItem from="1679738177885" duration="1784000" />
       <workItem from="1679747224912" duration="3878000" />
       <workItem from="1680075910222" duration="156000" />
+      <workItem from="1680692878447" duration="2715000" />
+      <workItem from="1680705728665" duration="4840000" />
     </task>
     <servers />
   </component>
@@ -95,6 +123,17 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

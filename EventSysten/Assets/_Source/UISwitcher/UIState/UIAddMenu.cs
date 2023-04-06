@@ -1,5 +1,7 @@
-﻿using ResourceSystem;
+﻿using System;
+using ResourceSystem;
 using System.Collections.Generic;
+using Signals;
 using UnityEngine.UI;
 using Until;
 
@@ -8,33 +10,28 @@ namespace UISwitcher.UIState
     class UIAddMenu : IUIState
     {
         private readonly List<ResourceController> _resources;
-        private readonly Dropdown _dropdown;
-        private readonly InputField _inputField;
-        private readonly Button _button;
 
-        public UIAddMenu(List<ResourceController> resources, Dropdown dropdown, InputField inputField, Button button)
+        public UIAddMenu(List<ResourceController> resources)
         {
             _resources = resources;
-            _dropdown = dropdown;
-            _inputField = inputField;
-            _button = button;
         }
 
-        private void AddResource()
+        private void AddResource(ResourceEnum type, int count)
         {
-            ResourceController resourceView = MyExtensions.FindResource(_resources, MyExtensions.FindTypeResource(_dropdown));
+            ResourceController resourceView = MyExtensions.FindResource(_resources, type);
 
-            resourceView.UpdateCountResource(int.Parse(_inputField.text));
+            resourceView.UpdateCountResource(count);
+            
         }
 
         public void Enter()
         {
-            _button.onClick.AddListener(AddResource);
+            Until.Signals.Get<AddResourceSignal>().AddListener(AddResource);
         }
 
         public void Exit()
         {
-            _button.onClick.RemoveAllListeners();
+            Until.Signals.Get<AddResourceSignal>().RemoveListener(AddResource);
         }
     }
 }
