@@ -1,6 +1,6 @@
 ﻿using ResourceSystem;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using Signals;
 
 namespace UISwitcher.UIState
 {
@@ -23,10 +23,12 @@ namespace UISwitcher.UIState
 
         public void Enter()
         {
+            Until.Signals.Get<ClearResourceSignal>().AddListener(ResetResource);
         }
 
         public void Exit()
         {
+            Until.Signals.Get<ClearResourceSignal>().RemoveListener(ResetResource);
         }
     }
 }

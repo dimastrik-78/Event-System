@@ -2,47 +2,35 @@ using System.Collections.Generic;
 using ResourceSystem;
 using UISwitcher;
 using UISwitcher.UIState;
-using UISwitcher.View;
 using UnityEngine;
+using Until;
 
 namespace Core
 {
     public class Bootstrapper : MonoBehaviour
     {
         [SerializeField] private UIController uiController;
+        [SerializeField] private ResourceView[] resourceViews;
 
-        [SerializeField] private MainPanelView mainPanelView;
-        [SerializeField] private AddPanelView addPanelView;
-        [SerializeField] private RemovePanelView removePanelView;
-
+        private readonly List<ResourceController> _resourceController = new();
+        
         private UIStateMachine _stateMachine;
-        private List<ResourceController> _resourceController;
 
         void Start()
         {
-            // ActivateResourceView();
-            // GetResourceControllers();
-            
+            ActivateResourceView();
+
             _stateMachine = new UIStateMachine(_resourceController);
 
             uiController.SetStateMachine(_stateMachine);
         }
 
-        // private void ActivateResourceView()
-        // {
-        //     for (int i = 0; i < ; i++)
-        //     {
-        //         new ResourceController();
-        //     }
-        // }
-        
-        // private void GetResourceControllers()
-        // {
-        //     _resourceController = new List<ResourceController>();
-        //     foreach (var resource in resources)
-        //     {
-        //         _resourceController.Add(resource.GetController());
-        //     }
-        // }
+        private void ActivateResourceView()
+        {
+            for (int i = 0; i < resourceViews.Length; i++)
+            {
+                _resourceController.Add(new ResourceController(MyExtensions.FindTypeResource(i), resourceViews[i]));
+            }
+        }
     }
 }

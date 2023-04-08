@@ -18,7 +18,7 @@ namespace UISwitcher.View
 
         private void OnButtonClicked()
         {
-            Until.Signals.Get<RemoveResourceSignal>().Dispatch(MyExtensions.FindTypeResource(dropdownRemove), int.Parse(inputFieldRemove.text));
+            Until.Signals.Get<RemoveResourceSignal>().Dispatch(MyExtensions.FindTypeResource(dropdownRemove.value), int.Parse(inputFieldRemove.text));
         }
     }
 }

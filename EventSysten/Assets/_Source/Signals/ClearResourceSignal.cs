@@ -1,10 +1,6 @@
-﻿using ResourceSystem;
-using Until;
+﻿using Until;
 
 namespace Signals
 {
-    public class ClearResourceSignal : ASignal<ResourceView[]>
-    {
-        
-    }
+    public class ClearResourceSignal : ASignal { }
 }

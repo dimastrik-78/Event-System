@@ -18,7 +18,7 @@ namespace UISwitcher.View
 
         private void OnButtonClicked()
         {
-            Until.Signals.Get<AddResourceSignal>().Dispatch(MyExtensions.FindTypeResource(dropdownAdd), int.Parse(inputFieldAdd.text));
+            Until.Signals.Get<AddResourceSignal>().Dispatch(MyExtensions.FindTypeResource(dropdownAdd.value), int.Parse(inputFieldAdd.text));
         }
     }
 }

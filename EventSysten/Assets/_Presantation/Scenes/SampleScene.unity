@@ -1877,7 +1877,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 723558473}
-  resource: 2
 --- !u!1 &743868467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,7 +2325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &878110589
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3703,7 +3702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1263417447}
-  resource: 0
 --- !u!1 &1317452362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4803,6 +4801,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiController: {fileID: 1591365592}
+  resourceViews:
+  - {fileID: 1263417449}
+  - {fileID: 2293612081879661374}
+  - {fileID: 723558475}
   mainPanelView: {fileID: 505329791}
   addPanelView: {fileID: 878110592}
   removePanelView: {fileID: 1820304542}
@@ -5218,4 +5220,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 2293612081879661372}
-  resource: 1

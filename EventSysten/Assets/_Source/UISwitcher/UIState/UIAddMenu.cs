@@ -1,8 +1,6 @@
-﻿using System;
-using ResourceSystem;
+﻿using ResourceSystem;
 using System.Collections.Generic;
 using Signals;
-using UnityEngine.UI;
 using Until;
 
 namespace UISwitcher.UIState
@@ -19,9 +17,8 @@ namespace UISwitcher.UIState
         private void AddResource(ResourceEnum type, int count)
         {
             ResourceController resourceView = MyExtensions.FindResource(_resources, type);
-
-            resourceView.UpdateCountResource(count);
             
+            resourceView.UpdateCountResource(count);
         }
 
         public void Enter()

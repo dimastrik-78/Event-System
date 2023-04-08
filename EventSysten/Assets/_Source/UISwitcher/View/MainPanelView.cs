@@ -1,5 +1,4 @@
-﻿using ResourceSystem;
-using Signals;
+﻿using Signals;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +6,6 @@ namespace UISwitcher.View
 {
     public class MainPanelView : MonoBehaviour
     {
-        [SerializeField] private ResourceView[] resources;
         [SerializeField] private Button buttonReset;
         
         void Start()
@@ -17,7 +15,7 @@ namespace UISwitcher.View
 
         private void OnButtonClicked()
         {
-            Until.Signals.Get<ClearResourceSignal>().Dispatch(resources);
+            Until.Signals.Get<ClearResourceSignal>().Dispatch();
         }
     }
 }

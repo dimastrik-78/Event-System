@@ -3,8 +3,5 @@ using Until;
 
 namespace Signals
 {
-    public class AddResourceSignal : ASignal<ResourceEnum, int>
-    {
-        
-    }
+    public class AddResourceSignal : ASignal<ResourceEnum, int> { }
 }
