@@ -1,21 +1,31 @@
 ﻿using ResourceSystem;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using EventSystem;
 
 namespace UISwitcher.UIState
 {
-    class UIMainMenu : IUIState
+    class UIMainMenu : IUIState, IGameEventListener
     {
         private readonly List<ResourceController> _resources;
-        private readonly Button _button;
+        private readonly OnSomeActionCallSO _onSomeActionCallSO;
 
-        public UIMainMenu(List<ResourceController> resources, Button button)
+        public UIMainMenu(List<ResourceController> resources, OnSomeActionCallSO onSomeActionCallSO)
         {
             _resources = resources;
-            _button = button;
+            _onSomeActionCallSO = onSomeActionCallSO;
         }
 
-        private void ResetResource()
+        public void Enter()
+        {
+            _onSomeActionCallSO.RegisterListener(this);
+        }
+
+        public void Exit()
+        {
+            _onSomeActionCallSO.RemoveListener(this);
+        }
+
+        public void InvokeEvent()
         {
             foreach (var resource in _resources)
             {
@@ -23,14 +33,6 @@ namespace UISwitcher.UIState
             }
         }
 
-        public void Enter()
-        {
-            _button.onClick.AddListener(ResetResource);
-        }
-
-        public void Exit()
-        {
-            _button.onClick.RemoveAllListeners();
-        }
+        public void InvokeEvent(ResourceEnum type, int count) { }
     }
 }

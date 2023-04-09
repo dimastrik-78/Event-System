@@ -1,7 +1,7 @@
-﻿using UISwitcher.UIState;
+﻿using EventSystem;
+using UISwitcher.UIState;
 using UnityEngine;
 using UnityEngine.UI;
-using EventSystem;
 
 namespace UISwitcher
 {
@@ -23,8 +23,6 @@ namespace UISwitcher
 
         private void Awake()
         {
-            OnSomeActionCallSO SOEvent = Resources.Load<OnSomeActionCallSO>(@"Signals/NewOnSomeActionCallSO");
-
             mainButton.onClick.AddListener(MainPanel);
             addButton.onClick.AddListener(AddPanel);
             removeButton.onClick.AddListener(RemovePanel);

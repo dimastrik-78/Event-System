@@ -1,40 +1,38 @@
 ﻿using ResourceSystem;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using EventSystem;
 using Until;
 
 namespace UISwitcher.UIState
 {
-    class UIAddMenu : IUIState
+    class UIAddMenu : IUIState, IGameEventListener
     {
         private readonly List<ResourceController> _resources;
-        private readonly Dropdown _dropdown;
-        private readonly InputField _inputField;
-        private readonly Button _button;
+        private readonly OnSomeActionCallSO _onSomeActionCallSO;
 
-        public UIAddMenu(List<ResourceController> resources, Dropdown dropdown, InputField inputField, Button button)
+        public UIAddMenu(List<ResourceController> resources, OnSomeActionCallSO onSomeActionCallSO)
         {
             _resources = resources;
-            _dropdown = dropdown;
-            _inputField = inputField;
-            _button = button;
+            _onSomeActionCallSO = onSomeActionCallSO;
         }
-
-        private void AddResource()
-        {
-            ResourceController resourceView = MyExtensions.FindResource(_resources, MyExtensions.FindTypeResource(_dropdown));
-
-            resourceView.UpdateCountResource(int.Parse(_inputField.text));
-        }
-
+        
         public void Enter()
         {
-            _button.onClick.AddListener(AddResource);
+            _onSomeActionCallSO.RegisterListener(this);
         }
 
         public void Exit()
-        {
-            _button.onClick.RemoveAllListeners();
+        { 
+            _onSomeActionCallSO.RemoveListener(this);
         }
+
+        public void InvokeEvent(ResourceEnum type, int count)
+        {
+            ResourceController resourceView = MyExtensions.FindResource(_resources, type);
+            
+            resourceView.UpdateCountResource(count);
+        }
+        
+        public void InvokeEvent() { }
     }
 }

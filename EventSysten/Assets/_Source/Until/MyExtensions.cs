@@ -7,13 +7,13 @@ namespace Until
 {
     public static class MyExtensions
     {
-        public static ResourceEnum FindTypeResource(Dropdown dropdown)
+        public static ResourceEnum FindTypeResource(int index)
         {
-            if (dropdown.value == 0)
+            if (index == 0)
             {
                 return ResourceEnum.Diamond;
             }
-            if (dropdown.value == 1)
+            if (index == 1)
             {
                 return ResourceEnum.Gold;
             }

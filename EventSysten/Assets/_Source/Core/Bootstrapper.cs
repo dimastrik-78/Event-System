@@ -1,60 +1,38 @@
 using System.Collections.Generic;
+using EventSystem;
+using Mono.Cecil;
 using ResourceSystem;
 using UISwitcher;
 using UISwitcher.UIState;
 using UnityEngine;
-using UnityEngine.UI;
+using Until;
 
 namespace Core
 {
     public class Bootstrapper : MonoBehaviour
     {
+        [SerializeField] private OnSomeActionCallSO onSomeActionCallSO;
         [SerializeField] private UIController uiController;
+        [SerializeField] private ResourceView[] resourceViews;
 
-        [Header("Control System")]
-        [SerializeField] private ResourceView[] resources;
-        [SerializeField] private Button buttonReset;
-
-        [Header("Add System")]
-        [SerializeField] private Dropdown dropdownAdd;
-        [SerializeField] private InputField inputFieldAdd;
-        [SerializeField] private Button buttonAdd;
-
-        [Header("Remove System")]
-        [SerializeField] private Dropdown dropdownRemove;
-        [SerializeField] private InputField inputFieldRemove;
-        [SerializeField] private Button buttonRemove;
-
+        private readonly List<ResourceController> _resourceController = new();
+        
         private UIStateMachine _stateMachine;
-        private List<ResourceController> _resourceController;
 
-        void Start()
+        void Awake()
         {
             ActivateResourceView();
-            GetResourceControllers();
             
-            _stateMachine = new UIStateMachine(_resourceController,
-                buttonReset,
-                dropdownAdd, inputFieldAdd, buttonAdd,
-                dropdownRemove, inputFieldRemove, buttonRemove);
+            _stateMachine = new UIStateMachine(_resourceController, onSomeActionCallSO);
 
             uiController.SetStateMachine(_stateMachine);
         }
 
         private void ActivateResourceView()
         {
-            foreach (var resource in resources)
+            for (int i = 0; i < resourceViews.Length; i++)
             {
-                resource.StartWork();
-            }
-        }
-        
-        private void GetResourceControllers()
-        {
-            _resourceController = new List<ResourceController>();
-            foreach (var resource in resources)
-            {
-                _resourceController.Add(resource.GetController());
+                _resourceController.Add(new ResourceController(MyExtensions.FindTypeResource(i), resourceViews[i]));
             }
         }
     }

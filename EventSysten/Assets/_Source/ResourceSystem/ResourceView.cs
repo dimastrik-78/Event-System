@@ -6,26 +6,17 @@ namespace ResourceSystem
     public class ResourceView : MonoBehaviour
     {
         [SerializeField] private Text text;
-        [SerializeField] private ResourceEnum resource;
+        
+        private ResourceEnum _resource;
 
-        private ResourceController _resourceController;
-
-        private void UpdatedText()
+        public void SetData(ResourceEnum resource)
         {
-            text.text = $"{resource} \n \n {_resourceController.GetCountResource()}";
+            _resource = resource;
         }
         
-        public void StartWork()
+        public void UpdatedText(int resourceCount)
         {
-            _resourceController = new(resource);
-            _resourceController.OnUpdateText += UpdatedText;
-            
-            UpdatedText();
-        }
-        
-        public ResourceController GetController()
-        {
-            return _resourceController;
+            text.text = $"{_resource} \n \n {resourceCount}";
         }
     }
 }

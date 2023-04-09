@@ -1,24 +1,32 @@
-﻿using System;
-
-namespace ResourceSystem
+﻿namespace ResourceSystem
 {
     public class ResourceController
     {
-        public event Action OnUpdateText;
-        
         private readonly ResourceEnum _resource;
+        private readonly ResourceView _resourceView;
+        
         private int _countResource;
         
-        public ResourceController(ResourceEnum resource)
+        public ResourceController(ResourceEnum resource, ResourceView resourceView)
         {
             _resource = resource;
+            _resourceView = resourceView;
+
+            SetSettings();
+        }
+
+        private void SetSettings()
+        {
+            _resourceView.SetData(_resource);
+            
+            _resourceView.UpdatedText(_countResource);
         }
 
         public void Clear()
         {
             _countResource = 0;
 
-            OnUpdateText?.Invoke();
+            _resourceView.UpdatedText(_countResource);
         }
         
         public void UpdateCountResource(int add)
@@ -30,17 +38,12 @@ namespace ResourceSystem
                 _countResource = 0;
             }
 
-            OnUpdateText?.Invoke();
+            _resourceView.UpdatedText(_countResource);
         }
 
         public ResourceEnum GetTypeResource()
         {
             return _resource;
-        }
-        
-        public int GetCountResource()
-        {
-            return _countResource;
         }
     }
 }

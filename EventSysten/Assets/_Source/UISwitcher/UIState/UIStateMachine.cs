@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using EventSystem;
 using ResourceSystem;
-using UnityEngine.UI;
 
 namespace UISwitcher.UIState
 {
@@ -10,16 +10,13 @@ namespace UISwitcher.UIState
         
         private readonly Dictionary<int, IUIState> _states;
         
-        public UIStateMachine(List<ResourceController> resourceController,
-            Button buttonReset,
-            Dropdown dropdownAdd, InputField inputFieldAdd, Button buttonAdd,
-            Dropdown dropdownRemove, InputField inputFieldRemove, Button buttonRemove)
+        public UIStateMachine(List<ResourceController> resourceController, OnSomeActionCallSO onSomeActionCallSO)
         {
             _states = new Dictionary<int, IUIState>
             {
-                { 0, new UIMainMenu(resourceController, buttonReset) },
-                { 1, new UIAddMenu(resourceController, dropdownAdd, inputFieldAdd, buttonAdd) },
-                { 2, new UIRemoveMenu(resourceController, dropdownRemove, inputFieldRemove, buttonRemove) }
+                { 0, new UIMainMenu(resourceController, onSomeActionCallSO) },
+                { 1, new UIAddMenu(resourceController, onSomeActionCallSO) },
+                { 2, new UIRemoveMenu(resourceController, onSomeActionCallSO) }
             };
         }
 
