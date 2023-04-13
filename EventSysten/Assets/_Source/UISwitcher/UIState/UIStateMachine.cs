@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using EventSystem;
 using ResourceSystem;
 
@@ -8,22 +9,22 @@ namespace UISwitcher.UIState
     {
         private IUIState _currentState;
         
-        private readonly Dictionary<int, IUIState> _states;
+        private readonly Dictionary<Type, IUIState> _states;
         
         public UIStateMachine(List<ResourceController> resourceController, OnSomeActionCallSO onSomeActionCallSO)
         {
-            _states = new Dictionary<int, IUIState>
+            _states = new Dictionary<Type, IUIState>
             {
-                { 0, new UIMainMenu(resourceController, onSomeActionCallSO) },
-                { 1, new UIAddMenu(resourceController, onSomeActionCallSO) },
-                { 2, new UIRemoveMenu(resourceController, onSomeActionCallSO) }
+                { typeof(UIMainMenu), new UIMainMenu(resourceController, onSomeActionCallSO) },
+                { typeof(UIAddMenu), new UIAddMenu(resourceController, onSomeActionCallSO) },
+                { typeof(UIRemoveMenu), new UIRemoveMenu(resourceController, onSomeActionCallSO) }
             };
         }
 
-        public void ChangeState(int id)
+        public void ChangeState(Type type)
         {
             _currentState?.Exit();
-            _currentState = _states[id];
+            _currentState = _states[type];
             _currentState.Enter();
         }
     }

@@ -2,27 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4edce1e3-f9a3-4cd1-8c0c-c38ea625d27b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/MainPanelView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/MainPanelView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/RemovePanelView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/RemovePanelView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EventSysten/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventSysten/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presantation/Resources/Signals.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presantation/Resources/Signals/NewOnSomeActionCallSO.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presantation/Resources/Signals/NewOnSomeActionCallSO.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presantation/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presantation/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/EventSystem/IGameEventListener.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/EventSystem/IGameEventListener.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/EventSystem/OnSomeActionCallSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/EventSystem/OnSomeActionCallSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/ResourceSystem/ResourceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/ResourceSystem/ResourceController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/ResourceSystem/ResourceView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/ResourceSystem/ResourceView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIAddMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIAddMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIMainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIMainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIRemoveMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIRemoveMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Until/MyExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Until/MyExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +13,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2NMHxFqmAZX77gW8TO44uvsVezf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -109,12 +91,14 @@
       <workItem from="1680075614014" duration="222000" />
       <workItem from="1680076200779" duration="357000" />
       <workItem from="1681055496061" duration="2688000" />
+      <workItem from="1681393329954" duration="279000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
