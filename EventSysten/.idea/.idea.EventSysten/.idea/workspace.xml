@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4edce1e3-f9a3-4cd1-8c0c-c38ea625d27b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EventSysten/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventSysten/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Presantation/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Presantation/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Core/Bootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/ResourceSystem/ResourceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/ResourceSystem/ResourceController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/ResourceSystem/ResourceSO.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/ResourceSystem/ResourceSO.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/ResourceSystem/ResourceView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/ResourceSystem/ResourceView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Signals/AddResourceSignal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Signals/AddResourceSignal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Signals/ClearResourceSignal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Signals/ClearResourceSignal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Signals/RemoveResourceSignal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Signals/RemoveResourceSignal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIAddMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIAddMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIMainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIMainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIRemoveMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIRemoveMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/AddPanelView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/AddPanelView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/MainPanelView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/MainPanelView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/RemovePanelView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/View/RemovePanelView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Source/Until/MyExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/Until/MyExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Source/UISwitcher/UIState/UIStateMachine.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +93,7 @@
       <workItem from="1680692878447" duration="2715000" />
       <workItem from="1680705728665" duration="4840000" />
       <workItem from="1680962430585" duration="3880000" />
+      <workItem from="1681393648245" duration="202000" />
     </task>
     <servers />
   </component>

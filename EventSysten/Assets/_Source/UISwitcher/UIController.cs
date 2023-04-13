@@ -31,7 +31,7 @@ namespace UISwitcher
         {
             DisablePanel();
 
-            _stateMachine.ChangeState(0);
+            _stateMachine.ChangeState(typeof(UIMainMenu));
 
             mainPanel.SetActive(true);
         }
@@ -40,7 +40,7 @@ namespace UISwitcher
         {
             DisablePanel();
 
-            _stateMachine.ChangeState(1);
+            _stateMachine.ChangeState(typeof(UIAddMenu));
 
             addPanel.SetActive(true);
         }
@@ -49,7 +49,7 @@ namespace UISwitcher
         {
             DisablePanel();
 
-            _stateMachine.ChangeState(2);
+            _stateMachine.ChangeState(typeof(UIRemoveMenu));
 
             removePanel.SetActive(true);
         }
